@@ -24,6 +24,13 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+    <script src="../js/angular.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../js/MediaStreamRecorder.js"></script>
+    <script src="../js/videoFunctions.js"></script>
+    <!-- for Edige/FF/Chrome/Opera/etc. getUserMedia support -->
+    <script src="https://cdn.rawgit.com/webrtc/adapter/master/adapter.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -55,21 +62,21 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="#services">Services</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,13 +90,13 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <!-- <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -125,9 +132,93 @@
             </div>
         </div>
     </section>
+ -->
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="../img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009-2011</h4>
+                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="../img/about/2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>March 2011</h4>
+                                    <h4 class="subheading">An Agency is Born</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="../img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>December 2012</h4>
+                                    <h4 class="subheading">Transition to Full Service</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="../img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>July 2014</h4>
+                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -219,87 +310,6 @@
                         <h4>Dreams</h4>
                         <p class="text-muted">Website Design</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="../img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="../img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="../img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="../img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -462,7 +472,7 @@
     </aside>
     
     <!-- Contact Section -->
-    <section id="contact">
+   <!--  <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -504,7 +514,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="container">
@@ -551,17 +561,125 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="../img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
+                            <!-- Video Recorder -->
+                        <h1>Follow the move</h1>
+                        <!-- Show the current video -->
+                        <!-- Continue the video with your own move -->
+                        <div>
+                        <label for="time-interval">Time Interval (milliseconds):</label>
+                        <input type="text" id="time-interval" value="5000">
+
+                        <button id="start-recording">Start</button>
+                        <button id="stop-recording" disabled>Stop</button>
+
+                        <button id="pause-recording" disabled>Pause</button>
+                        <button id="resume-recording" disabled>Resume</button>
+
+                        <button id="save-recording" disabled>Save</button>
+
+                        <br><br>
+
+                        <label for="video-width">Video Width:</label>
+                        <input type="text" id="video-width" value="320">
+
+                        <label for="video-height">Video Height:</label>
+                        <input type="text" id="video-height" value="240">
+                    </div>
+                    <div id="videos-container">
+                    </div>
+                    <script>
+                    function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
+                        navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
+                    }
+                    var mediaConstraints = {
+                        audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
+                        video: true
+                    };
+                    document.querySelector('#start-recording').onclick = function() {
+                        this.disabled = true;
+                        captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+                    };
+                    document.querySelector('#stop-recording').onclick = function() {
+                        this.disabled = true;
+                        mediaRecorder.stop();
+                        mediaRecorder.stream.stop();
+                        document.querySelector('#pause-recording').disabled = true;
+                        document.querySelector('#start-recording').disabled = false;
+                    };
+                    document.querySelector('#pause-recording').onclick = function() {
+                        this.disabled = true;
+                        mediaRecorder.pause();
+                        document.querySelector('#resume-recording').disabled = false;
+                    };
+                    document.querySelector('#resume-recording').onclick = function() {
+                        this.disabled = true;
+                        mediaRecorder.resume();
+                        document.querySelector('#pause-recording').disabled = false;
+                    };
+                    document.querySelector('#save-recording').onclick = function() {
+                        this.disabled = true;
+                        mediaRecorder.save();
+                    };
+                    var mediaRecorder;
+                    function onMediaSuccess(stream) {
+                        var video = document.createElement('video');
+                        var videoWidth = document.getElementById('video-width').value || 320;
+                        var videoHeight = document.getElementById('video-height').value || 240;
+                        video = mergeProps(video, {
+                            controls: true,
+                            muted: true,
+                            width: videoWidth,
+                            height: videoHeight,
+                            src: URL.createObjectURL(stream)
+                        });
+                        video.play();
+                        videosContainer.appendChild(video);
+                        videosContainer.appendChild(document.createElement('hr'));
+                        mediaRecorder = new MediaStreamRecorder(stream);
+                        mediaRecorder.stream = stream;
+                        mediaRecorder.mimeType = 'video/webm'; // this line is mandatory
+                        mediaRecorder.videoWidth = videoWidth;
+                        mediaRecorder.videoHeight = videoHeight;
+                        mediaRecorder.ondataavailable = function(blob) {
+                            var a = document.createElement('a');
+                            a.target = '_blank';
+                            a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
+                            a.href = URL.createObjectURL(blob);
+                            videosContainer.appendChild(a);
+                            videosContainer.appendChild(document.createElement('hr'));
+                        };
+                        var timeInterval = document.querySelector('#time-interval').value;
+                        if (timeInterval) timeInterval = parseInt(timeInterval);
+                        else timeInterval = 5 * 1000;
+                        // get blob after specific time interval
+                        mediaRecorder.start(timeInterval);
+                        document.querySelector('#stop-recording').disabled = false;
+                        document.querySelector('#pause-recording').disabled = false;
+                        document.querySelector('#save-recording').disabled = false;
+                    }
+                    function onMediaError(e) {
+                        console.error('media error', e);
+                    }
+                    var videosContainer = document.getElementById('videos-container');
+                    var index = 1;
+                    // below function via: http://goo.gl/B3ae8c
+                    function bytesToSize(bytes) {
+                        var k = 1000;
+                        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                        if (bytes === 0) return '0 Bytes';
+                        var i = parseInt(Math.floor(Math.log(bytes) / Math.log(k)), 10);
+                        return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+                    }
+                    // below function via: http://goo.gl/6QNDcI
+                    function getTimeLength(milliseconds) {
+                        var data = new Date(milliseconds);
+                        return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + data.getUTCSeconds() + " second(s)";
+                    }
+                    window.onbeforeunload = function() {
+                        document.querySelector('#start-recording').disabled = false;
+                    };
+                    </script>
+                    <p></p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
