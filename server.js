@@ -6,7 +6,7 @@ var url = require('url');  //to parse url strings
 var counter = 1000; //to count invocations of function(req,res)
 
 
-var ROOT_DIR = 'html'; //dir to serve static files from
+var ROOT_DIR = "src"; //dir to serve static files from
 
 var MIME_TYPES = {
     'css': 'text/css',

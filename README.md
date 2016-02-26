@@ -17,3 +17,7 @@
 * Rinaldo Melo (Ciência da Computação)
 * Wallisson Carvalho (Arquitetura e Urbanismo)
 * Zilmarc Paulino (Arte e Mídia)
+
+# Material extra
+
+<p>Para a captura de vídeos através da webcam foi ulitizada a biblioteca MediaStremRecorder.js que pode ser encontrada neste <a href="https://github.com/streamproc/MediaStreamRecorder">link</a>.
