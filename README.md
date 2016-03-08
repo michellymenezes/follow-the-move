@@ -1,4 +1,4 @@
-# Follow the Move
+# Follow the Move | http://www.followthemove.tk
 
 <p>Sente vergonha de dançar em público, mas ao mesmo tempo quer que pessoas vejam seus movimentos? Seus dias de vergonha podem ter acabado com o Follow the Move. A ideia é estimular pessoas a dançarem com seu próprio estilo, sem restrições. Um usuário pode começar a montar um vídeo dança com uma música que goste e compartilhar esse vídeo com outras pessoas possibilitando-as a dar continuidade ao vídeo ou apenas desfrutar dos belos movimentos do amigo. Todos os vídeos estarão em uma página web, facilitando o acesso e compartilhamento dos mesmos.</p>
 
