@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -30,6 +30,9 @@
     <script src="../js/videoFunctions.js"></script>
     <!-- for Edige/FF/Chrome/Opera/etc. getUserMedia support -->
     <script src="https://cdn.rawgit.com/webrtc/adapter/master/adapter.js"></script>
+    
+    <script src="../js/controllers.js"></script>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -317,7 +320,7 @@
 
     <!-- Team Section -->
     <section id="team" class="bg-light-gray">
-        <div class="container">
+        <div ng-controller="TeamController" class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Our Amazing Team</h2>
@@ -325,114 +328,42 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="../img/team/layza.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Layza</h4>
-                        <p class="text-muted">Arquitetura e Urbanismo</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="../img/team/wallisson.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Wallisson</h4>
-                        <p class="text-muted">Arquitetura e Urbanismo</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="../img/team/matheus.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Matheus</h4>
-                        <p class="text-muted">Arte e Mídia</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="../img/team/zilmark.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Zilmark</h4>
-                        <p class="text-muted">Arte e Mídia</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div  ng-repeat="person in teamArtArq">       
+	                <div class="col-sm-3">
+	                    <div class="team-member">
+	                        <img src="{{person.image}}" class="img-responsive img-circle" alt="">
+	                        <h4>{{person.name}}</h4>
+	                        <p class="text-muted">{{person.course}}</p>
+	                        <ul class="list-inline social-buttons">
+	                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+	                            </li>
+	                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+	                            </li>
+	                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>
                 </div>
             </div>
-            
-            
+                   
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/maysa.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Maysa</h4>
-                        <p class="text-muted">Ciência da Computação</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/michelly.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Michelly</h4>
-                        <p class="text-muted">Ciência da Computação</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/rinaldo.jpeg" class="img-responsive img-circle" alt="">
-                        <h4>Rinaldo</h4>
-                        <p class="text-muted">Ciência da Computação</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+            	<div  ng-repeat="person in teamCC">
+	                <div class="col-sm-4">
+	                    <div class="team-member">
+	                        <img src="{{person.image}}" class="img-responsive img-circle" alt="">
+	                        <h4>{{person.name}}</h4>
+	                        <p class="text-muted">{{person.course}}</p>
+	                        <ul class="list-inline social-buttons">
+	                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+	                            </li>
+	                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+	                            </li>
+	                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>
                 </div>
             </div>
 <!--             <div class="row">
@@ -569,13 +500,15 @@
                         <label for="time-interval">Time Interval (milliseconds):</label>
                         <input type="text" id="time-interval" value="5000">
 
-                        <button id="start-recording">Start</button>
-                        <button id="stop-recording" disabled>Stop</button>
+                        <button id="start-recording" ng-click="play=true">Start</button>
+                        <button id="stop-recording" ng-click="play=true" disabled>Stop</button>
 
                         <button id="pause-recording" disabled>Pause</button>
                         <button id="resume-recording" disabled>Resume</button>
 
                         <button id="save-recording" disabled>Save</button>
+                        
+                        <audio  src="../song/habits.mp3" ng-if="play" controls ></audio>
 
                         <br><br>
 
