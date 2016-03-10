@@ -4,15 +4,22 @@ app.controller('TeamController', function ($scope) {
 	$scope.teamCC = [{
 		name: 'Maysa Macedo',
 		course: 'Ciência da Computação',
-		image: '../img/team/maysa.jpeg'
+		image: '../img/team/maysa.jpeg',
+		github: 'https://github.com/MaysaMacedo',
+		linkedin: 'https://br.linkedin.com/in/maysa-macedo-29094798/en'
 	},{
 		name: 'Michelly Menezes',
 		course: 'Ciência da Computação',
-		image:'../img/team/michelly.jpeg'
+		image:'../img/team/michelly.jpeg',
+		github: 'https://github.com/michellymenezes',
+		linkedin: 'https://br.linkedin.com/in/martha-michelly-galvão-menezes-8544438b'
 	},{
 		name: 'Rinaldo Melo',
 		course: 'Ciência da Computação',
-		image: '../img/team/rinaldo.jpeg'
+		image: '../img/team/rinaldo.jpeg',
+		github: 'https://github.com/rinaldo7272',
+		linkedin: 'https://br.linkedin.com/in/rinaldo-melo-81492198'
+
 	}];
 	
 	$scope.teamArtArq = [{
