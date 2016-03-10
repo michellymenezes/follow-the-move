@@ -25,7 +25,8 @@ app.controller('TeamController', function ($scope) {
 	$scope.teamArtArq = [{
 		name: 'Layza Lys',
 		course: 'Arquitetura e Urbanismo',
-		image: '../img/team/layza.jpeg'
+		image: '../img/team/layza.jpeg',
+		facebook: 'https://www.facebook.com/layza.lys'
 	},{
 		name: 'Wallisson Carvalho',
 		course: 'Arquitetura e Urbanismo',
@@ -47,16 +48,21 @@ app.controller('StepsController', function($scope) {
 		title: 'Escolha sua música',
 		description: '',
 		image: '../img/about/icon1.jpg',
-		side: 'ok'
 	},{
 		title: 'Contribua',
 		description: '',
 		image: '../img/about/icon2.jpg',
-		side: 'timeline-inverted'
 	},{
 		title: 'Publique',
 		description: '',
 		image: '../img/about/icon3.jpg',
-		side: 'ok'
 	}];
+});
+
+app.controller('VideosController', function($scope) {
+	$scope.videos = [];
+	
+	$scope.createVideo = function(){
+		
+	};
 });
