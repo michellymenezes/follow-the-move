@@ -34,3 +34,22 @@ app.controller('TeamController', function ($scope) {
 	}];
 	
 });
+
+app.controller('StepsController', function($scope) {
+	$scope.steps =[{
+		title: 'Escolha sua música',
+		description: '',
+		image: '../img/about/icon1.jpg',
+		side: 'ok'
+	},{
+		title: 'Contribua',
+		description: '',
+		image: '../img/about/icon2.jpg',
+		side: 'timeline-inverted'
+	},{
+		title: 'Publique',
+		description: '',
+		image: '../img/about/icon3.jpg',
+		side: 'ok'
+	}];
+});
