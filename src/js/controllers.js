@@ -32,13 +32,13 @@ app.controller('TeamController', function ($scope) {
 		course: 'Arquitetura e Urbanismo',
 		image:'../img/team/wallisson.jpeg'
 	},{
-		name: 'Matheus Ramires',
+		name: 'Matheus Fernandes',
 		course: 'Arte e Mídia',
 		image:'../img/team/matheus.jpeg'
 	},{
-		name: 'Zilmark Paulino',
+		name: 'Zilmarc Paulino',
 		course: 'Arte e Mídia',
-		image: '../img/team/zilmark.jpeg'
+		image: '../img/team/zilmarc.jpeg'
 	}];
 	
 });
@@ -46,15 +46,15 @@ app.controller('TeamController', function ($scope) {
 app.controller('StepsController', function($scope) {
 	$scope.steps =[{
 		title: 'Escolha sua música',
-		description: '',
+		description: "Let's go? Para começar, escolha uma música da nossa lista abaixo e veja se alguém já enviou uma coreografia e até onde está gravada.",
 		image: '../img/about/icon1.jpg',
 	},{
 		title: 'Contribua',
-		description: '',
+		description: 'Dê continuidade! Deixe o seu toque na coreografia, grave uma parte dela agora!',
 		image: '../img/about/icon2.jpg',
 	},{
 		title: 'Publique',
-		description: '',
+		description: 'Pronto! Faça o upload para o site e veja milhares de pessoas se unirem a você em uma só dança!',
 		image: '../img/about/icon3.jpg',
 	}];
 });
