@@ -30,15 +30,18 @@ app.controller('TeamController', function ($scope) {
 	},{
 		name: 'Wallisson Carvalho',
 		course: 'Arquitetura e Urbanismo',
-		image:'../img/team/wallisson.jpeg'
+		image:'../img/team/wallisson.jpeg',
+		facebook: 'https://www.facebook.com/wallisson.carvalho.3'
 	},{
 		name: 'Matheus Fernandes',
 		course: 'Arte e Mídia',
-		image:'../img/team/matheus.jpeg'
+		image:'../img/team/matheus.jpeg',
+		facebook: 'https://www.facebook.com/m6th66s'
 	},{
 		name: 'Zilmarc Paulino',
 		course: 'Arte e Mídia',
-		image: '../img/team/zilmarc.jpeg'
+		image: '../img/team/zilmarc.jpeg',
+		facebook: 'https://www.facebook.com/zilmarc.paulino'
 	}];
 	
 });
@@ -60,9 +63,15 @@ app.controller('StepsController', function($scope) {
 });
 
 app.controller('VideosController', function($scope) {
-	$scope.videos = [];
-	
-	$scope.createVideo = function(){
-		
-	};
+	//teste
+	$scope.videos = [{
+		name: 'Pokerface',
+		singer: 'Lady Gaga',
+		music: '../song/habits.mp3',
+		p1: {
+				music: '../song/habits.mp3',
+				video: '',
+				size: 3000
+		}	
+	}];
 });

@@ -163,7 +163,7 @@
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
 
-        <div class="container">
+        <div ng-controller="VideosController" class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contribuições</h2>
@@ -181,8 +181,8 @@
                         <img src="../img/portfolio/roundicons.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
+                        <h4>{{videos[0].name}}</h4>
+                        <p class="text-muted">{{videos[0].singer}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -344,7 +344,7 @@
     <!-- Portfolio Modals -->
 
     <!-- Music Modal -->
-    <div class="portfolio-modal modal fade" id="musicModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div ng-controller="VideosController" class="portfolio-modal modal fade" id="musicModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -360,16 +360,16 @@
                             <p class="item-intro text-muted">Essa música ainda não foi gravada. Seja o primeiro!</p>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio  src="../song/habits.mp3" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio  src="{{videos[0].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
-                            	<div class="col-lg-7" align="left"><audio  src="../song/habits.mp3" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio  src="{{videos[0].p1.music}}" controls ></audio></div>
                             </div>                        
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="countdown()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                         </div>
                     </div>
@@ -388,9 +388,10 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div  ng-controller="VideosController" class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
+                                        
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <!-- Video Recorder -->
@@ -399,7 +400,7 @@
                         <!-- Continue the video with your own move -->
                         <div>
                         <label for="time-interval">Time Interval (milliseconds):</label>
-                        <input type="text" id="time-interval" value="5000">
+                        <input type="text" id="time-interval" value="{{videos[0].p1.size}}">
 
                         <button id="start-recording" ng-click="play=true">Start</button>
                         <button id="stop-recording" ng-click="play=true" disabled>Stop</button>
@@ -422,8 +423,8 @@
                     <div id="videos-container"></div>
                     <script src = 'videoMaker.js'></script>
                         	<br><br>
-                            <button type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
-                            <button type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                            <button id="save-video" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
+                            <button type="button" onclick="resetTime()" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
                         </div>
                     </div>
                 </div>

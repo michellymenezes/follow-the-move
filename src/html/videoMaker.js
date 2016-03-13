@@ -30,8 +30,11 @@ document.querySelector('#save-recording').onclick = function() {
     this.disabled = true;
     mediaRecorder.save();
 };
+
+
 var mediaRecorder;
 function onMediaSuccess(stream) {
+	
     var video = document.createElement('video');
     var videoWidth = document.getElementById('video-width').value || 320;
     var videoHeight = document.getElementById('video-height').value || 240;
@@ -50,7 +53,12 @@ function onMediaSuccess(stream) {
     mediaRecorder.mimeType = 'video/webm'; // this line is mandatory
     mediaRecorder.videoWidth = videoWidth;
     mediaRecorder.videoHeight = videoHeight;
+    
     mediaRecorder.ondataavailable = function(blob) {
+        mediaRecorder.stop();
+        
+        if(index <= 1){
+        
         var a = document.createElement('a');
         a.target = '_blank';
         a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
@@ -65,10 +73,11 @@ function onMediaSuccess(stream) {
             // mediaElement.src = URL.createObjectURL(blob.video);
             // mediaElement.style.width= '100%';
             // videosContainer.appendChild(mediaElement);
+        }
 
     };
     var timeInterval = document.querySelector('#time-interval').value;
-    if (timeInterval) timeInterval = parseInt(timeInterval);
+    if (timeInterval) timeInterval = parseInt(timeInterval) + 2000;
     else timeInterval = 5 * 1000;
     // get blob after specific time interval
     mediaRecorder.start(timeInterval);
@@ -92,7 +101,7 @@ function bytesToSize(bytes) {
 // below function via: http://goo.gl/6QNDcI
 function getTimeLength(milliseconds) {
     var data = new Date(milliseconds);
-    return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + data.getUTCSeconds() + " second(s)";
+    return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + (data.getUTCSeconds()-2) + " second(s)";
 }
 window.onbeforeunload = function() {
     document.querySelector('#start-recording').disabled = false;
