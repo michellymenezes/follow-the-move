@@ -58,7 +58,7 @@ function onMediaSuccess(stream) {
         mediaRecorder.stop();
         
         if(index <= 1){
-        
+        mediaRecorder.save();
         var a = document.createElement('a');
         a.target = '_blank';
         a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
