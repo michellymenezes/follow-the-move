@@ -64,14 +64,48 @@ app.controller('StepsController', function($scope) {
 
 app.controller('VideosController', function($scope) {
 	//teste
-	$scope.videos = [{
+	$scope.songs = [{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
 		name: 'Pokerface',
 		singer: 'Lady Gaga',
-		music: '../song/habits.mp3',
-		p1: {
-				music: '../song/habits.mp3',
-				video: '',
-				size: 3000
-		}	
+		music: '../song/1/pokerface.mp3',
+		nextPart: '../song/1/1.mp3',
+		parts: [{
+			music:"../song/1/1.mp3",
+			video: null
+		},{
+			music:"../song/1/2.mp3",
+			video: null
+		},{
+			music:"../song/1/3.mp3",
+			video: null
+		}]
 	}];
+	
+	$scope.updateMusic = function(songN, videoSrc){
+		var song = $scope.songs[songN]; 
+		song.nVideos++;
+		
+		if(song.nVideos < song.parts.length){
+			song.message = 'Esses são os passos que temos para essa música até o momento. Contribua com seus movimentos também!';			
+		}
+		else if(song.nVideos == song.parts.length){
+			song.done = true;
+			song.message = 'Que pena, essa música música já foi completada :( Mas você pode checar o resultado logo abaixo!';	
+		}
+		
+		for(var i = 0; i < song.parts.length; i++){
+			if (song.parts[i].video === null){
+				song.parts[i].video = videoSrc;
+				
+				if(!song.done){
+					song.nextPart = song.parts[i+1].music;
+				}
+				return;
+			}
+		}
+			
+	}
 });
