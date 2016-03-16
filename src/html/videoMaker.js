@@ -6,30 +6,30 @@ var mediaConstraints = {
     video: true
 };
 document.querySelector('#start-recording').onclick = function() {
-    this.disabled = true;
+    this.disabled = false;
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 };
-document.querySelector('#stop-recording').onclick = function() {
-    this.disabled = true;
-    mediaRecorder.stop();
-    mediaRecorder.stream.stop();
-    document.querySelector('#pause-recording').disabled = true;
-    document.querySelector('#start-recording').disabled = false;
-};
-document.querySelector('#pause-recording').onclick = function() {
-    this.disabled = true;
-    mediaRecorder.pause();
-    document.querySelector('#resume-recording').disabled = false;
-};
-document.querySelector('#resume-recording').onclick = function() {
-    this.disabled = true;
-    mediaRecorder.resume();
-    document.querySelector('#pause-recording').disabled = false;
-};
-document.querySelector('#save-recording').onclick = function() {
-    this.disabled = true;
-    mediaRecorder.save();
-};
+//document.querySelector('#stop-recording').onclick = function() {
+//    this.disabled = true;
+//    mediaRecorder.stop();
+//    mediaRecorder.stream.stop();
+//    document.querySelector('#pause-recording').disabled = true;
+//    document.querySelector('#start-recording').disabled = false;
+//};
+//document.querySelector('#pause-recording').onclick = function() {
+//    this.disabled = true;
+//    mediaRecorder.pause();
+//    document.querySelector('#resume-recording').disabled = false;
+//};
+//document.querySelector('#resume-recording').onclick = function() {
+//    this.disabled = true;
+//    mediaRecorder.resume();
+//    document.querySelector('#pause-recording').disabled = false;
+//};
+//document.querySelector('#save-recording').onclick = function() {
+//    this.disabled = true;
+//    mediaRecorder.save();
+//};
 
 
 var mediaRecorder;
@@ -82,9 +82,9 @@ function onMediaSuccess(stream) {
     // get blob after specific time interval
 //    console.log(recordingTime);
     mediaRecorder.start(timeInterval);
-    document.querySelector('#stop-recording').disabled = false;
-    document.querySelector('#pause-recording').disabled = false;
-    document.querySelector('#save-recording').disabled = false;
+    //document.querySelector('#stop-recording').disabled = false;
+    //document.querySelector('#pause-recording').disabled = false;
+    //document.querySelector('#save-recording').disabled = false;
 }
 function onMediaError(e) {
     console.error('media error', e);

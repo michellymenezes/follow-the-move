@@ -293,7 +293,6 @@
                                     <source src="example.webm" type="video/webm">
                                 </video>
                                 <script>
-
                                     var i = 1;
                                     var sources = ['example.webm', 'example2.webm'];
                                     $('#videoElement').bind('ended', function() {
@@ -303,12 +302,22 @@
                                         this.play();
                                     });
                                 </script>
+                                <form>
+                                    <br><br>
+                                    <p><button type="button" value="PlaySoundAndVideo" onClick="PlaySoundAndVideo('videoElement'),PlaySoundAndVideo('audioInHTML0')" class="btn btn-primary btn-lg">Play video!</button></p>
+                                    <script>
+                                        function PlaySoundAndVideo(soundObj,videoObj) {
+                                            var soundAndVideo=document.getElementById(soundObj,videoObj);
+                                            soundAndVideo.play();
+                                        }
+                                    </script>
+                                </form>
 
                             </div>
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[0].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML0" ng-src="{{songs[0].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -317,7 +326,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" id="start-recording"><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                         </div>
                     </div>
@@ -349,21 +358,21 @@
                         <label for="time-interval">Time Interval (milliseconds):</label>
                         <input type="text" id="time-interval" value="{{videos[0].time}}">
 
-                        <button id="start-recording" ng-click="play=true">Start</button>
-                        <button id="stop-recording" ng-click="play=true" disabled>Stop</button>
+                        <!--<button id="start-recording" ng-click="play=true">Start</button>-->
+                        <!--<button id="stop-recording" ng-click="play=true" disabled>Stop</button>-->
 
-                        <button id="pause-recording" disabled>Pause</button>
-                        <button id="resume-recording" disabled>Resume</button>
+                        <!--<button id="pause-recording" disabled>Pause</button>-->
+                        <!--<button id="resume-recording" disabled>Resume</button>-->
 
-                        <button id="save-recording" disabled>Save</button>
+                        <!--<button id="save-recording" disabled>Save</button>-->
 
                         <br><br>
 
-                        <label for="video-width">Video Width:</label>
-                        <input type="text" id="video-width" value="320">
+                        <!--<label for="video-width">Video Width:</label>-->
+                        <!--<input type="text" id="video-width" value="320">-->
 
-                        <label for="video-height">Video Height:</label>
-                        <input type="text" id="video-height" value="240">
+                        <!--<label for="video-height">Video Height:</label>-->
+                        <!--<input type="text" id="video-height" value="240">-->
 
                         
                     </div>
@@ -371,7 +380,7 @@
                     <script src = 'videoMaker.js'></script>
                         	<br><br>
                             <button id="save-video" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
-                            <button type="button" onclick="resetTime()" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                            <button type="button"  data-dismiss="modal" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
                         </div>
                     </div>
                 </div>
