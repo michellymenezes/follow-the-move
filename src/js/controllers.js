@@ -240,7 +240,7 @@ app.controller('VideosController', function($scope) {
 		}
 		else if(song.nVideos == song.parts.length){
 			song.done = true;
-			song.message = 'Que pena, essa música música já foi completada :( Mas você pode checar o resultado logo abaixo!';	
+			song.message = 'Que pena, essa música já foi completada :( Mas você pode checar o resultado logo abaixo!';	
 		}
 		
 		for(var i = 0; i < song.parts.length; i++){
@@ -253,7 +253,11 @@ app.controller('VideosController', function($scope) {
 				}
 				return;
 			}
-		}
-			
+		}	
 	}
+	
+	$scope.openModalSong = function (song) {
+		$('#modalSong' + song).modal('show');
+		console.log($scope.songs[1].name);
+	};
 });
