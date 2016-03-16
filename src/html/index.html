@@ -177,7 +177,7 @@
 	                                <i class="fa fa-plus fa-3x"></i>
 	                            </div>
 	                        </div>
-	                        <img src="../img/portfolio/roundicons.png" class="img-responsive" alt="">
+	                        <img ng-src="{{songs[i].image}}" class="img-responsive" alt="">
 	                    </a>
 	                    <div class="portfolio-caption">
 	                        <h4>{{songs[i].name}}</h4>
@@ -276,7 +276,7 @@
     <!-- Music Modal -->
     <div ng-controller="VideosController" class="portfolio-modal modal fade" id="modalSong0" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(0)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -382,7 +382,7 @@
     <!-- Portfolio Modal 2 -->
     <div class="portfolio-modal modal fade" id="modalSong1" tabindex="-1" role="dialog" aria-hidden="true">
         <div ng-controller="VideosController" class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(1)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -420,7 +420,7 @@
     <!-- Portfolio Modal 3 -->
     <div class="portfolio-modal modal fade" id="modalSong2" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(2)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -458,7 +458,7 @@
     <!-- Portfolio Modal 4 -->
     <div class="portfolio-modal modal fade" id="modalSong3" tabindex="-1" role="dialog" aria-hidden="true">
         <div ng-controller="VideosController" class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(3)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -496,7 +496,7 @@
     <!-- Portfolio Modal 5 -->
     <div class="portfolio-modal modal fade" id="modalSong4" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(4)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -534,7 +534,7 @@
     <!-- Portfolio Modal 6 -->
     <div class="portfolio-modal modal fade" id="modalSong5" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" ng-click="closeModalSong(5)">
                 <div class="lr">
                     <div class="rl">
                     </div>

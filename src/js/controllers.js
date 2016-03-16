@@ -69,7 +69,7 @@ app.controller('VideosController', function($scope) {
 	$scope.getCurrentSong = function(n){
 		$scope.n = n;
 		console.log($scope.songs[n].name);
-	}
+	};
 	
 	//teste
 	$scope.songs = [{
@@ -79,7 +79,7 @@ app.controller('VideosController', function($scope) {
 		name: 'Pokerface',
 		singer: 'Lady Gaga',
 		music: '../song/1/pokerface.mp3',
-		image: '',
+		image: '../img/grid/imgSong1.jpg',
 		time: 42000,
 		nextPart: '../song/1/1.mp3',
 		parts: [{
@@ -102,7 +102,7 @@ app.controller('VideosController', function($scope) {
 		name: 'Chorando Se Foi',
 		singer: 'Kaoma',
 		music: '../song/2/chorandoSeFoi.mp3',
-		image: '',
+		image: '../img/grid/imgSong2.jpg',
 		time: 34000,
 		nextPart: '../song/2/1.mp3',
 		parts: [{
@@ -125,7 +125,7 @@ app.controller('VideosController', function($scope) {
 		name: 'Figure 8',
 		singer: 'FKA Twigs',
 		music: '../song/3/figure8.mp3',
-		image: '',
+		image: '../img/grid/imgSong3.jpg',
 		time: 40000,
 		nextPart: '../song/3/1.mp3',
 		parts: [{
@@ -146,9 +146,9 @@ app.controller('VideosController', function($scope) {
 		nVideos: 0,
 		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
 		name: 'Do It',
-		singer: 'Sean Paul',
+		singer: 'Cherish',
 		music: '../song/4/doIt.mp3',
-		image: '',
+		image: '../img/grid/imgSong4.jpg',
 		time: 52000,
 		nextPart: '../song/4/1.mp3',
 		parts: [{
@@ -171,7 +171,7 @@ app.controller('VideosController', function($scope) {
 		name: 'One Way Or Another',
 		singer: 'Blondie',
 		music: '../song/5/oneWayOrAnother.mp3',
-		image: '',
+		image: '../img/grid/imgSong5.jpg',
 		time: 46000,
 		nextPart: '../song/5/1.mp3',
 		parts: [{
@@ -190,7 +190,7 @@ app.controller('VideosController', function($scope) {
 		name: 'Preta',
 		singer: 'Beto Barbosa',
 		music: '../song/6/preta.mp3',
-		image: '',
+		image: '../img/grid/imgSong6.jpg',
 		time: 43000,
 		nextPart: '../song/6/1.mp3',
 		parts: [{
@@ -209,7 +209,7 @@ app.controller('VideosController', function($scope) {
 		name: 'Evil Boy',
 		singer: 'Die Antword',
 		music: '../song/7/evilBoy.mp3',
-		image: '',
+		image: '../img/grid/imgSong7.jpg',
 		time: 28000,
 		nextPart: '../song/7/1.mp3',
 		parts: [{
@@ -254,10 +254,13 @@ app.controller('VideosController', function($scope) {
 				return;
 			}
 		}	
-	}
+	};
 	
 	$scope.openModalSong = function (song) {
 		$('#modalSong' + song).modal('show');
-		console.log($scope.songs[1].name);
+	};
+	
+	$scope.closeModalSong = function (song) {
+    	$('#modalSong' + song).modal('hide');
 	};
 });
