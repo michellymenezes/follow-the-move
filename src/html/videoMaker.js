@@ -36,8 +36,8 @@ var mediaRecorder;
 function onMediaSuccess(stream) {
 	
     var video = document.createElement('video');
-    var videoWidth = document.getElementById('video-width').value || 320;
-    var videoHeight = document.getElementById('video-height').value || 240;
+    var videoWidth = 800;
+    var videoHeight = 600;
     video = mergeProps(video, {
         controls: true,
         muted: true,
@@ -80,6 +80,7 @@ function onMediaSuccess(stream) {
     if (timeInterval) timeInterval = parseInt(timeInterval) + 2000;
     else timeInterval = 5 * 1000;
     // get blob after specific time interval
+//    console.log(recordingTime);
     mediaRecorder.start(timeInterval);
     document.querySelector('#stop-recording').disabled = false;
     document.querySelector('#pause-recording').disabled = false;

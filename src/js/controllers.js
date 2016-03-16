@@ -63,6 +63,14 @@ app.controller('StepsController', function($scope) {
 });
 
 app.controller('VideosController', function($scope) {
+	
+	$scope.n = null;
+	
+	$scope.getCurrentSong = function(n){
+		$scope.n = n;
+		console.log($scope.songs[n].name);
+	}
+	
 	//teste
 	$scope.songs = [{
 		done: false,
@@ -71,15 +79,154 @@ app.controller('VideosController', function($scope) {
 		name: 'Pokerface',
 		singer: 'Lady Gaga',
 		music: '../song/1/pokerface.mp3',
+		image: '',
+		time: 42000,
 		nextPart: '../song/1/1.mp3',
 		parts: [{
 			music:"../song/1/1.mp3",
+			time: 42000,
 			video: null
 		},{
 			music:"../song/1/2.mp3",
+			time: 42000,
 			video: null
 		},{
 			music:"../song/1/3.mp3",
+			time: 46000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'Chorando Se Foi',
+		singer: 'Kaoma',
+		music: '../song/2/chorandoSeFoi.mp3',
+		image: '',
+		time: 34000,
+		nextPart: '../song/2/1.mp3',
+		parts: [{
+			music:"../song/2/1.mp3",
+			time: 34000,
+			video: null
+		},{
+			music:"../song/2/2.mp3",
+			time: 40000,
+			video: null
+		},{
+			music:"../song/2/3.mp3",
+			time: 41000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'Figure 8',
+		singer: 'FKA Twigs',
+		music: '../song/3/figure8.mp3',
+		image: '',
+		time: 40000,
+		nextPart: '../song/3/1.mp3',
+		parts: [{
+			music:"../song/3/1.mp3",
+			time: 40000,
+			video: null
+		},{
+			music:"../song/3/2.mp3",
+			time: 48000,
+			video: null
+		},{
+			music:"../song/3/3.mp3",
+			time: 45000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'Do It',
+		singer: 'Sean Paul',
+		music: '../song/4/doIt.mp3',
+		image: '',
+		time: 52000,
+		nextPart: '../song/4/1.mp3',
+		parts: [{
+			music:"../song/4/1.mp3",
+			time: 52000,
+			video: null
+		},{
+			music:"../song/4/2.mp3",
+			time: 51000,
+			video: null
+		},{
+			music:"../song/4/3.mp3",
+			time: 53000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'One Way Or Another',
+		singer: 'Blondie',
+		music: '../song/5/oneWayOrAnother.mp3',
+		image: '',
+		time: 46000,
+		nextPart: '../song/5/1.mp3',
+		parts: [{
+			music:"../song/5/1.mp3",
+			time: 46000,
+			video: null
+		},{
+			music:"../song/5/2.mp3",
+			time: 59000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'Preta',
+		singer: 'Beto Barbosa',
+		music: '../song/6/preta.mp3',
+		image: '',
+		time: 43000,
+		nextPart: '../song/6/1.mp3',
+		parts: [{
+			music:"../song/6/1.mp3",
+			time: 43000,
+			video: null
+		},{
+			music:"../song/6/2.mp3",
+			time: 59000,
+			video: null
+		}]
+	},{
+		done: false,
+		nVideos: 0,
+		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		name: 'Evil Boy',
+		singer: 'Die Antword',
+		music: '../song/7/evilBoy.mp3',
+		image: '',
+		time: 28000,
+		nextPart: '../song/7/1.mp3',
+		parts: [{
+			music:"../song/7/1.mp3",
+			time: 28000,
+			video: null
+		},{
+			music:"../song/7/2.mp3",
+			time: 41000,
+			video: null
+		},{
+			music:"../song/7/3.mp3",
+			time: 35000,
+			video: null
+		},{
+			music:"../song/7/4.mp3",
+			time: 44000,
 			video: null
 		}]
 	}];
@@ -102,6 +249,7 @@ app.controller('VideosController', function($scope) {
 				
 				if(!song.done){
 					song.nextPart = song.parts[i+1].music;
+					song.time = song.parts[i+1].time;
 				}
 				return;
 			}
