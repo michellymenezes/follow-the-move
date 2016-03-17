@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36927732-5323-4714-91a6-8cc211b685e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/html/index.html" afterPath="$PROJECT_DIR$/src/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/html/videoMaker.js" afterPath="$PROJECT_DIR$/src/html/videoMaker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjetoArteComp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1837672">
-              <caret line="316" column="36" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.54058194">
+              <caret line="327" column="36" selection-start-line="327" selection-start-column="36" selection-end-line="327" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -409,8 +408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1837672">
-          <caret line="316" column="36" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.54058194">
+          <caret line="327" column="36" selection-start-line="327" selection-start-column="36" selection-end-line="327" selection-end-column="36" />
           <folding />
         </state>
       </provider>
