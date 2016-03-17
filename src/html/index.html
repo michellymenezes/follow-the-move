@@ -145,10 +145,10 @@
                             </div>
                         </li>
                         <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Faça parte
-                                    <br>de nossa
-                                    <br>história!</h4>
+                            <div ng-click="openTipsModal()" class="timeline-image">
+                                <h4>Clique para
+                                    <br>ver dicas de
+                                    <br>gravação!</h4>
                             </div>
                         </li>
                     </ul>
@@ -156,6 +156,28 @@
             </div>
         </div>
     </section>
+    
+            <!-- Tips Modal -->
+    <div class="portfolio-modal modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="StepsController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                                        
+                        <div class="modal-body">
+                            <button type="button"  data-dismiss="modal" class="btn btn-lg btn-primary"><i class="fa fa-hand-peace-o"></i> Entendi!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Grid Section -->
