@@ -1,18 +1,24 @@
-function captureUserMedia(mediaConstraints, successCallback, errorCallback) {
+function captureUserMedia(mediaConstraints, successCallback, errorCallback, partSong) {
+	setTimeout(function() { partSong.play(); }, 1000);
     navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
 }
 var mediaConstraints = {
     audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
     video: true
 };
-
+var timeInterval = null;
 function start(song) {
     $('#modalSong' + song).modal('hide');
+    timeInterval = document.getElementById('time'+song).value;
+    var partSong = document.getElementById('partSong'+song);
     var song = document.getElementById('audioInHTML'+song);
+    
     song.pause();
     song.currentTime = 0.0;
     this.disabled = false;
-    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+    console.log(timeInterval);
+    
+    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
 }
 //document.querySelector('#start-recording').onclick = function() {
 //    this.disabled = false;
@@ -85,7 +91,7 @@ function onMediaSuccess(stream) {
    // var timeInterval = document.querySelector('#time-interval').value;
    // if (timeInterval) timeInterval = parseInt(timeInterval) + 2000;
   //  else
-    timeInterval = 5 * 1000;
+   // timeInterval = 5 * 1000;
     // get blob after specific time interval
 //    console.log(recordingTime);
     mediaRecorder.start(timeInterval);
