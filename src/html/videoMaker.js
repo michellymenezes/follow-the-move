@@ -5,30 +5,43 @@ var mediaConstraints = {
     audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
     video: true
 };
-document.querySelector('#start-recording').onclick = function() {
+
+function start(song) {
+    $('#modalSong' + song).modal('hide');
+    var song = document.getElementById('audioInHTML'+song);
+    song.pause();
+    song.currentTime = 0.0;
     this.disabled = false;
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-};
-//document.querySelector('#stop-recording').onclick = function() {
-//    this.disabled = true;
-//    mediaRecorder.stop();
-//    mediaRecorder.stream.stop();
-//    document.querySelector('#pause-recording').disabled = true;
-//    document.querySelector('#start-recording').disabled = false;
+}
+//document.querySelector('#start-recording').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 //};
-//document.querySelector('#pause-recording').onclick = function() {
-//    this.disabled = true;
-//    mediaRecorder.pause();
-//    document.querySelector('#resume-recording').disabled = false;
+//
+//document.querySelector('#maysa').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 //};
-//document.querySelector('#resume-recording').onclick = function() {
-//    this.disabled = true;
-//    mediaRecorder.resume();
-//    document.querySelector('#pause-recording').disabled = false;
+
+//document.querySelector('#start-recording2').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 //};
-//document.querySelector('#save-recording').onclick = function() {
-//    this.disabled = true;
-//    mediaRecorder.save();
+//
+//document.querySelector('#start-recording3').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+//};
+//
+//document.querySelector('#start-recording4').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+//};
+//
+//document.querySelector('#start-recording5').onclick = function() {
+//    this.disabled = false;
+//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 //};
 
 
@@ -37,7 +50,7 @@ function onMediaSuccess(stream) {
 	
     var video = document.createElement('video');
     var videoWidth = 800;
-    var videoHeight = 600;
+    var videoHeight = 400;
     video = mergeProps(video, {
         controls: true,
         muted: true,
@@ -66,25 +79,16 @@ function onMediaSuccess(stream) {
         videosContainer.appendChild(a);
         videosContainer.appendChild(document.createElement('hr'));
 
-           // var form = document.createElement('form');
-            // var mediaElement = document.createElement('video');
-            // mediaElement.autoplay = true;
-            // mediaElement.controls = true;
-            // mediaElement.src = URL.createObjectURL(blob.video);
-            // mediaElement.style.width= '100%';
-            // videosContainer.appendChild(mediaElement);
         }
 
     };
-    var timeInterval = document.querySelector('#time-interval').value;
-    if (timeInterval) timeInterval = parseInt(timeInterval) + 2000;
-    else timeInterval = 5 * 1000;
+   // var timeInterval = document.querySelector('#time-interval').value;
+   // if (timeInterval) timeInterval = parseInt(timeInterval) + 2000;
+  //  else
+    timeInterval = 5 * 1000;
     // get blob after specific time interval
 //    console.log(recordingTime);
     mediaRecorder.start(timeInterval);
-    //document.querySelector('#stop-recording').disabled = false;
-    //document.querySelector('#pause-recording').disabled = false;
-    //document.querySelector('#save-recording').disabled = false;
 }
 function onMediaError(e) {
     console.error('media error', e);
@@ -105,5 +109,6 @@ function getTimeLength(milliseconds) {
     return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + (data.getUTCSeconds()-2) + " second(s)";
 }
 window.onbeforeunload = function() {
-    document.querySelector('#start-recording').disabled = false;
+    //document.querySelector('#start-recording').disabled = false;
+    //document.querySelector('#maysa').disable = false;
 };

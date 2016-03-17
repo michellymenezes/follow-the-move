@@ -326,7 +326,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" id="start-recording"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(0)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                         </div>
                     </div>
@@ -354,28 +354,6 @@
                             <!-- Video Recorder -->
                         <!-- Show the current video -->
                         <!-- Continue the video with your own move -->
-                        <div>
-                        <label for="time-interval">Time Interval (milliseconds):</label>
-                        <input type="text" id="time-interval" value="{{videos[0].time}}">
-
-                        <!--<button id="start-recording" ng-click="play=true">Start</button>-->
-                        <!--<button id="stop-recording" ng-click="play=true" disabled>Stop</button>-->
-
-                        <!--<button id="pause-recording" disabled>Pause</button>-->
-                        <!--<button id="resume-recording" disabled>Resume</button>-->
-
-                        <!--<button id="save-recording" disabled>Save</button>-->
-
-                        <br><br>
-
-                        <!--<label for="video-width">Video Width:</label>-->
-                        <!--<input type="text" id="video-width" value="320">-->
-
-                        <!--<label for="video-height">Video Height:</label>-->
-                        <!--<input type="text" id="video-height" value="240">-->
-
-                        
-                    </div>
                     <div id="videos-container"></div>
                     <script src = 'videoMaker.js'></script>
                         	<br><br>
@@ -408,7 +386,7 @@
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[1].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML1" ng-src="{{songs[1].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -417,8 +395,9 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
-                            
+
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(1)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
+
                                 <iframe src="upload.html"></iframe>
                                 
                         	</a>
@@ -449,7 +428,7 @@
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[2].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML2" ng-src="{{songs[2].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -458,7 +437,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(2)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                             
                                                             <iframe src="upload.html"></iframe>
@@ -490,7 +469,7 @@
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[3].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML3" ng-src="{{songs[3].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -499,7 +478,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(3)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                             
                                                             <iframe src="upload.html"></iframe>
@@ -531,7 +510,7 @@
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[4].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML4" ng-src="{{songs[4].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -540,7 +519,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(4)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                             
                                                             <iframe src="upload.html"></iframe>
@@ -572,7 +551,7 @@
                             <br><br>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Música completa:</div>
-                            	<div class="col-lg-7" align="left"><audio id="fullSong" ng-src="{{songs[5].music}}" controls ></audio></div>
+                            	<div class="col-lg-7" align="left"><audio id="audioInHTML5" ng-src="{{songs[5].music}}" controls ></audio></div>
                             </div>
                             <div class="row">
                           		<div class="col-lg-5" align="right">Sua parte:</div>
@@ -581,7 +560,7 @@
                             
                             <a href="#videoModal" class="portfolio-link" data-toggle="modal">
                             <br><br>
-                            <p><button type="button" class="btn btn-primary btn-lg" ng-click="startRecording()"><i class="fa fa-video-camera"></i> Gravar!</button></p>
+                            <p><button type="button" class="btn btn-primary btn-lg" onClick='start(5)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                             
                                                             <iframe src="upload.html"></iframe>
