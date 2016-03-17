@@ -295,7 +295,7 @@
 
     <!-- Portfolio Modals -->
 
-    <!-- Music Modal -->
+    <!-- sample Modal -->
     <div ng-controller="VideosController" class="portfolio-modal modal fade" id="modalSong0" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(0)">
@@ -347,7 +347,7 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong0" ng-src="{{songs[0].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal0" class="portfolio-link" data-toggle="modal">
                             <br><br>
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(0)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
@@ -362,10 +362,10 @@
     </div>
 
 
-    <!-- Video Modal -->
-    <div class="portfolio-modal modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal0" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" onClick="stopMusic(0)">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -380,12 +380,12 @@
                             <!-- Video Recorder -->
                         <!-- Show the current video -->
                         <!-- Continue the video with your own move -->
-                    <div class="col-lg-7" align="left"><audio id="partSong0" ng-src="{{songs[0].nextPart}}"></audio></div>
-                    <div id="videos-container"></div>
+                    <div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>
+                    <div id="videos-container0"></div>
                     <script src = 'videoMaker.js'></script>
                         	<br><br>
                             <button id="save-video" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
-                            <button type="button"  data-dismiss="modal" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                            <button type="button"  onClick="stopMusic(0)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
                         </div>
                     </div>
                 </div>
@@ -393,7 +393,9 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 2 -->
+
+
+    <!-- Sample Modal 2 -->
     <div class="portfolio-modal modal fade" id="modalSong1" tabindex="-1" role="dialog" aria-hidden="true">
         <div ng-controller="VideosController" class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(1)">
@@ -421,12 +423,12 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong1" ng-src="{{songs[1].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal1" class="portfolio-link" data-toggle="modal">
                             <br><br>
 
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(1)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
 
-<iframe src="uploadForms/uploadKaoma.html"></iframe>
+                               <iframe src="uploadForms/uploadKaoma.html"></iframe>
                                 
                         	</a>
                         </div>
@@ -436,7 +438,40 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 3 -->
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" onClick="stopMusic(1)">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="VideosController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- Video Recorder -->
+                            <!-- Show the current video -->
+                            <!-- Continue the video with your own move -->
+                            <!--<div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>-->
+                            <div id="videos-container1"></div>
+                            <script src = 'videoMaker.js'></script>
+                            <br><br>
+                            <button id="save-video1" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button"  onClick="stopMusic(1)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sample Modal 3 -->
     <div class="portfolio-modal modal fade" id="modalSong2" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(2)">
@@ -464,7 +499,7 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong2" ng-src="{{songs[2].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal2" class="portfolio-link" data-toggle="modal">
                             <br><br>
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(2)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
@@ -478,7 +513,38 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 4 -->
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" onClick="stopMusic(2)">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="VideosController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- Video Recorder -->
+                            <!-- Show the current video -->
+                            <!-- Continue the video with your own move -->
+                            <!--<div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>-->
+                            <div id="videos-container2"></div>
+                            <script src = 'videoMaker.js'></script>
+                            <br><br>
+                            <button id="save-video2" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button"  onClick="stopMusic(2)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Modal 4 -->
     <div class="portfolio-modal modal fade" id="modalSong3" tabindex="-1" role="dialog" aria-hidden="true">
         <div ng-controller="VideosController" class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(3)">
@@ -506,7 +572,7 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong3" ng-src="{{songs[3].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal3" class="portfolio-link" data-toggle="modal">
                             <br><br>
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(3)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
@@ -520,7 +586,38 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 5 -->
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" onClick="stopMusic(3)">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="VideosController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- Video Recorder -->
+                            <!-- Show the current video -->
+                            <!-- Continue the video with your own move -->
+                            <!--<div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>-->
+                            <div id="videos-container3"></div>
+                            <script src = 'videoMaker.js'></script>
+                            <br><br>
+                            <button id="save-video3" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button"  onClick="stopMusic(3)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Modal 5 -->
     <div class="portfolio-modal modal fade" id="modalSong4" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(4)">
@@ -548,7 +645,7 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong4" ng-src="{{songs[4].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal4" class="portfolio-link" data-toggle="modal">
                             <br><br>
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(4)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
@@ -562,7 +659,38 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 6 -->
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" onClick="stopMusic(4)">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="VideosController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- Video Recorder -->
+                            <!-- Show the current video -->
+                            <!-- Continue the video with your own move -->
+                            <!--<div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>-->
+                            <div id="videos-container4"></div>
+                            <script src = 'videoMaker.js'></script>
+                            <br><br>
+                            <button id="save-video4" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button"  onClick="stopMusic(4)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Modal 6 -->
     <div class="portfolio-modal modal fade" id="modalSong5" tabindex="-1" role="dialog" aria-hidden="true">
                 <div ng-controller="VideosController" class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(5)">
@@ -590,13 +718,44 @@
                             	<div class="col-lg-7" align="left"><audio id="partSong5" ng-src="{{songs[5].nextPart}}" controls ></audio></div>
                             </div>                        
                             
-                            <a href="#videoModal" class="portfolio-link" data-toggle="modal">
+                            <a href="#videoModal5" class="portfolio-link" data-toggle="modal">
                             <br><br>
                             <p><button type="button" class="btn btn-primary btn-lg" onClick='start(5)'><i class="fa fa-video-camera"></i> Gravar!</button></p>
                         	</a>
                             
                                                             <iframe src="uploadForms/uploadBetoBarbosa.html"></iframe>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recorder Modal -->
+    <div class="portfolio-modal modal fade" id="videoModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" onClick="stopMusic(5)">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div  ng-controller="VideosController" class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- Video Recorder -->
+                            <!-- Show the current video -->
+                            <!-- Continue the video with your own move -->
+                            <!--<div class="col-lg-7" align="left"><audio id="partToDance" ng-src="{{songs[0].nextPart}}"></audio></div>-->
+                            <div id="videos-container5"></div>
+                            <script src = 'videoMaker.js'></script>
+                            <br><br>
+                            <button id="save-video5" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button"  onClick="stopMusic(5)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
                         </div>
                     </div>
                 </div>

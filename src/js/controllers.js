@@ -272,4 +272,10 @@ app.controller('VideosController', function($scope) {
 		song.currentTime = 0.0;
 	};
 
+    $scope.closeModalVideo = function () {
+        $('#videoModal').modal('hide');
+        var song = document.getElementById('partSong');
+        song.pause();
+        song.currentTime = 0.0;
+    };
 });

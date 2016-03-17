@@ -7,12 +7,15 @@ var mediaConstraints = {
     video: true
 };
 var timeInterval = null;
+var newSong = null;
+
 function start(song) {
+    newSong = song;
     $('#modalSong' + song).modal('hide');
     timeInterval = document.getElementById('time'+song).value;
     var partSong = document.getElementById('partSong'+song);
     var song = document.getElementById('audioInHTML'+song);
-    
+
     song.pause();
     song.currentTime = 0.0;
     this.disabled = false;
@@ -20,40 +23,28 @@ function start(song) {
     
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
 }
-//document.querySelector('#start-recording').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
-//
-//document.querySelector('#maysa').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
 
-//document.querySelector('#start-recording2').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
-//
-//document.querySelector('#start-recording3').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
-//
-//document.querySelector('#start-recording4').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
-//
-//document.querySelector('#start-recording5').onclick = function() {
-//    this.disabled = false;
-//    captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-//};
+function stopMusic(elem) {
+
+    var song = document.getElementById('partSong'+elem);
+    song.pause();
+    song.currentTime = 0.0;
+
+
+    //var video = document.getElementById('video');
+    //video.pause();
+    //video.currentTime = 0;
+
+    $('#videoModal'+elem).modal('hide');
+}
+
 
 
 var mediaRecorder;
 function onMediaSuccess(stream) {
-	
+
+    var videosContainer = document.getElementById('videos-container'+newSong);
+
     var video = document.createElement('video');
     var videoWidth = 800;
     var videoHeight = 400;
@@ -99,7 +90,7 @@ function onMediaSuccess(stream) {
 function onMediaError(e) {
     console.error('media error', e);
 }
-var videosContainer = document.getElementById('videos-container');
+
 var index = 1;
 // below function via: http://goo.gl/B3ae8c
 function bytesToSize(bytes) {
