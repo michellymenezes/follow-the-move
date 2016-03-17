@@ -60,6 +60,11 @@ app.controller('StepsController', function($scope) {
 		description: 'Pronto! Faça o upload para o site e veja milhares de pessoas se unirem a você em uma só dança!',
 		image: '../img/about/icon3.jpg',
 	}];
+	
+		
+ 	$scope.openTipsModal = function () {
+ 		$('#tipsModal').modal('show');
+ 	};
 });
 
 app.controller('VideosController', function($scope) {
