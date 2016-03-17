@@ -6,10 +6,10 @@
 
 <body>
 
-<form action="upload_file.php" method="post" enctype="multipart/form-data">
+<form action="../upload_file.php" method="post" enctype="multipart/form-data">
 <label for="file"><span>Filename:</span></label>
 
-    <input type="hidden" value="kaoma" id="folder"/>
+    <input type="hidden" name="folder" value="kaoma" id="folder"/>
     <input type="file" name="file" id="file" /> 
 <br/>
 <input type="submit" name="submit" value="Submit" />
