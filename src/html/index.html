@@ -157,7 +157,7 @@
         </div>
     </section>
     
-            <!-- Tips Modal -->
+    <!-- Tips Modal -->
     <div class="portfolio-modal modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -216,6 +216,7 @@
         </div>
     </section>
 
+
     <!-- Team Section -->
     <section id="team" class="bg-light-gray">
         <div ng-controller="TeamController" class="container">
@@ -261,6 +262,7 @@
         </div>
     </section>
 
+
     <!-- Clients Aside -->
     <aside class="clients">
         <div class="container">
@@ -286,21 +288,13 @@
                         </li>
                     </ul>
                 </div>
-                <!--  --><div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Termos de Uso</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </footer>
 
     <!-- Portfolio Modals -->
 
-    <!-- sample Modal -->
+    <!-- sample Modal 1 -->
     <div ng-controller="VideosController" class="portfolio-modal modal fade" id="modalSong0" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" ng-click="closeModalSong(0)">
@@ -327,7 +321,7 @@
                                         this.src = sources[i++ % sources.length];
                                         this.load();
                                         this.play();
-                                        
+                                       
                                     });
                                 </script>
                                 <form>
@@ -368,7 +362,7 @@
     </div>
 
 
-    <!-- Recorder Modal -->
+    <!-- Recorder Modal 1-->
     <div class="portfolio-modal modal fade" id="videoModal0" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" onClick="stopMusic(0)">
@@ -519,7 +513,7 @@
         </div>
     </div>
 
-    <!-- Recorder Modal -->
+    <!-- Recorder Modal 3-->
     <div class="portfolio-modal modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" onClick="stopMusic(2)">
@@ -565,7 +559,11 @@
                         <div class="modal-body">
                             <h2>{{songs[3].name}}</h2>
                             <p class="item-intro text-muted">{{songs[3].message}}</p>
-                            <div>
+                            <div ng-show="{{songs[3].nVideos > 0}}">
+	                            <video id="videoParts3" width="640" height="360" src="{{songs[3].parts[0].video}}"></video>
+	                            <audio id="audioParts3" src="{{songs[3].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(3, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
@@ -592,7 +590,7 @@
         </div>
     </div>
 
-    <!-- Recorder Modal -->
+    <!-- Recorder Modal 4-->
     <div class="portfolio-modal modal fade" id="videoModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" onClick="stopMusic(3)">

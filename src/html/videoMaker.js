@@ -1,7 +1,7 @@
 function captureUserMedia(mediaConstraints, successCallback, errorCallback, partSong) {
 	setTimeout(function() { partSong.play(); }, 1000);
     navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
-}
+};
 var mediaConstraints = {
     audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
     video: true
@@ -12,7 +12,7 @@ var newSong = null;
 function start(song) {
     newSong = song;
     $('#modalSong' + song).modal('hide');
-    timeInterval = document.getElementById('time'+song).value;
+    timeInterval = document.getElementById('time'+song).value + 2000;
     var partSong = document.getElementById('partSong'+song);
     var song = document.getElementById('audioInHTML'+song);
 
@@ -22,23 +22,29 @@ function start(song) {
     console.log(timeInterval);
     
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
-}
+};
 
-function playVideosAndSongs(song, n){
-	for(var i = 0; i++; i < n){
-		video = document.getElementById('videoParts'+song)
-		video.src = "../video/"+(song-1)+"/"+(i+1)+".webm";
-		music = document.getElementById('songParts'+song)
-		music.src = "../song/"+(song-1)+"/"+(i+1)+".mp3";
-		
-		video.load();
-		music.load();
-		
-		video.play();
-		music.play();
+function playVideosAndSongs(song, n, j) {	
+	if(j < n){
 
+			video = document.getElementById('videoParts'+song);
+			console.log(video);
+			video.src = "../video/"+(song+1)+"/"+(j+1)+".webm";
+			music = document.getElementById('audioParts'+song);
+			console.log(music);
+			music.src = "../song/"+(song+1)+"/"+(j+1)+".mp3";
+			
+			video.load();
+			music.load();
+			
+			video.play();
+			music.play();
+			j++;
+			music.onended = function () {
+				playVideosAndSongs(song, n, j);
+			};
 	}
-}
+};
 
 function stopMusic(elem) {
 
@@ -52,7 +58,7 @@ function stopMusic(elem) {
     //video.currentTime = 0;
 
     $('#videoModal'+elem).modal('hide');
-}
+};
 
 
 

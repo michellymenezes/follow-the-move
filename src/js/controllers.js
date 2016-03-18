@@ -162,18 +162,18 @@ app.controller('VideosController', ['$scope', function($scope) {
 		}]
 	},{
 		done: false,
-		nVideos: 0,
-		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		nVideos: 1,
+		message: 'Esses são os passos que temos para essa música até o momento. Contribua com seus movimentos também!',
 		name: 'Do It',
 		singer: 'Cherish',
 		music: '../song/4/doIt.mp3',
 		image: '../img/grid/imgSong4.jpg',
-		time: 52000,
-		nextPart: '../song/4/1.mp3',
+		time: 51000,
+		nextPart: '../song/4/2.mp3',
 		parts: [{
 			music:"../song/4/1.mp3",
 			time: 52000,
-			video: null
+			video: "../video/4/1.webm"
 		},{
 			music:"../song/4/2.mp3",
 			time: 51000,
