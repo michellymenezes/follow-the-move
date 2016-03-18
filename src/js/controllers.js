@@ -1,6 +1,6 @@
 var app = angular.module('app', []);
 
-app.controller('TeamController', function ($scope) {
+app.controller('TeamController', ['$scope', function ($scope) {
 	$scope.teamCC = [{
 		name: 'Maysa Macedo',
 		course: 'Ciência da Computação',
@@ -44,9 +44,9 @@ app.controller('TeamController', function ($scope) {
 		facebook: 'https://www.facebook.com/zilmarc.paulino'
 	}];
 	
-});
+}]);
 
-app.controller('StepsController', function($scope) {
+app.controller('StepsController', ['$scope', function($scope) {
 	$scope.steps =[{
 		title: 'Escolha sua música',
 		description: "Let's go? Para começar, escolha uma música da nossa lista abaixo e veja se alguém já enviou uma coreografia e até onde está gravada.",
@@ -61,13 +61,27 @@ app.controller('StepsController', function($scope) {
 		image: '../img/about/icon3.jpg',
 	}];
 	
+	$scope.tips =[{
+		title: '1. Escolha um ambiente bem iluminado',
+		image: '../img/about/tip1.jpg',
+	},{
+		title: '2. Opte por planos de fundo claros',
+		image: '../img/about/tip2.jpg',
+	},{
+		title: '3. Se distancie de sua webcam de modo que ela capture seu corpo por completo',
+		image: '../img/about/tip3.jpg',
+	},{
+		title: '4. Se vai dar continuidade a um vídeo que já existe, observe como foi o último passo e tente continuar de onde parou',
+		image: '../img/about/tip4.jpg',
+	}];
+	
 		
  	$scope.openTipsModal = function () {
  		$('#tipsModal').modal('show');
  	};
-});
+}]);
 
-app.controller('VideosController', function($scope) {
+app.controller('VideosController', ['$scope', function($scope) {
 	
 	$scope.n = null;
 	
@@ -237,6 +251,9 @@ app.controller('VideosController', function($scope) {
 	}];
 	
 	$scope.updateMusic = function(songN, videoSrc){
+		console.log($scope.songs[songN].message);
+		console.log($scope.songs[songN].nVideos);
+		console.log($scope.songs[songN].nextPart);
 		var song = $scope.songs[songN]; 
 		song.nVideos++;
 		
@@ -256,9 +273,15 @@ app.controller('VideosController', function($scope) {
 					song.nextPart = song.parts[i+1].music;
 					song.time = song.parts[i+1].time;
 				}
+				console.log($scope.songs[songN].message);
+				console.log($scope.songs[songN].nVideos);
+				console.log($scope.songs[songN].nextPart);
+				console.log($scope.songs[songN]);
+
 				return;
 			}
-		}	
+		}
+		
 	};
 	
 	$scope.openModalSong = function (song) {
@@ -278,4 +301,4 @@ app.controller('VideosController', function($scope) {
         song.pause();
         song.currentTime = 0.0;
     };
-});
+}]);

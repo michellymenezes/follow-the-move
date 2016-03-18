@@ -171,6 +171,11 @@
                     <div class="col-lg-8 col-lg-offset-2">
                                         
                         <div class="modal-body">
+                        	<h2 class="section-heading" align="center">Dicas</h2>
+                        	<div ng-repeat="tip in tips">
+	                        	<h3 class="section-subheading">{{tip.title}} </h3>
+	                        	<div align="center"> <img ng-src="{{tip.image}}" class="img-responsive" alt=""></div>
+                        	</div>
                             <button type="button"  data-dismiss="modal" class="btn btn-lg btn-primary"><i class="fa fa-hand-peace-o"></i> Entendi!</button>
                         </div>
                     </div>
@@ -322,6 +327,7 @@
                                         this.src = sources[i++ % sources.length];
                                         this.load();
                                         this.play();
+                                        
                                     });
                                 </script>
                                 <form>
@@ -384,7 +390,7 @@
                     <div id="videos-container0"></div>
                     <script src = 'videoMaker.js'></script>
                         	<br><br>
-                            <button id="save-video" type="button" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
+                            <button id="save-video" type="button" ng-click="updateMusic(0, '../video/1/1.webm')" data-dismiss="modal" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>                        	
                             <button type="button"  onClick="stopMusic(0)" class="btn btn-primary"><i class="fa fa-times"></i> Cancelar</button>
                         </div>
                     </div>

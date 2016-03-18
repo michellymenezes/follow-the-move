@@ -24,6 +24,22 @@ function start(song) {
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
 }
 
+function playVideosAndSongs(song, n){
+	for(var i = 0; i++; i < n){
+		video = document.getElementById('videoParts'+song)
+		video.src = "../video/"+(song-1)+"/"+(i+1)+".webm";
+		music = document.getElementById('songParts'+song)
+		music.src = "../song/"+(song-1)+"/"+(i+1)+".mp3";
+		
+		video.load();
+		music.load();
+		
+		video.play();
+		music.play();
+
+	}
+}
+
 function stopMusic(elem) {
 
     var song = document.getElementById('partSong'+elem);
