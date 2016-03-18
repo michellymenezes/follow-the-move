@@ -22,10 +22,16 @@ function start(song) {
     $('#modalSong' + song).modal('hide');
     timeInterval = document.getElementById('time'+song).value;
     var partSong = document.getElementById('partSong'+song);
+    partSong.pause();
+    partSong.currentTime = 0.0;
 
     var song = document.getElementById('audioInHTML'+song);
     song.pause();
     song.currentTime = 0.0;
+
+    var music = document.getElementById('audioParts'+newSong);
+    music.pause();
+    music.currentTime = 0.0;
 
     document.querySelector('#save-video'+newSong).disabled = true;
 
@@ -50,9 +56,15 @@ function playVideosAndSongs(song, n, j) {
 			music.load();
 			
 			video.play();
-			music.play();
+
+            if(j == 0) {
+                setTimeout(function() { music.play(); }, 1500);
+            } else {
+                music.play();
+            }
+
 			j++;
-			music.onended = function () {
+			video.onended = function () {
 				playVideosAndSongs(song, n, j);
 			};
 	}
@@ -80,12 +92,12 @@ function onMediaSuccess(stream) {
     var videosContainer = document.getElementById('videos-container'+newSong);
 
 
-    if(videosContainer.childElementCount == 0) {
+    //if(videosContainer.childElementCount == 0) {
         video = document.createElement('video');
-    }
+    //}
 
-    var videoWidth = 700;
-    var videoHeight = 300;
+    var videoWidth = 800;
+    var videoHeight = 600;
     video = mergeProps(video, {
         controls: false,
         muted: true,
