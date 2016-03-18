@@ -53,11 +53,11 @@ app.controller('StepsController', ['$scope', function($scope) {
 		image: '../img/about/icon1.jpg',
 	},{
 		title: 'Contribua',
-		description: 'Dê continuidade! Deixe o seu toque na coreografia, grave uma parte dela agora!',
+		description: 'Dê continuidade! Deixe o seu toque na coreografia, gravando uma parte dela. Basta clicar no botão gravar para começar seus movimentos!',
 		image: '../img/about/icon2.jpg',
 	},{
 		title: 'Publique',
-		description: 'Pronto! Faça o upload para o site e veja milhares de pessoas se unirem a você em uma só dança!',
+		description: 'Pronto! Quando a música terminar, um arquivo com sua dança será baixado. Você só precisa clicar na música que dançou e selecionar o arquivo para envio. Veja pessoas diferentes se unirem a você em uma só dança!',
 		image: '../img/about/icon3.jpg',
 	}];
 	
