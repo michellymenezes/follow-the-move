@@ -6,13 +6,16 @@ var mediaConstraints = {
     audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
     video: true
 };
+var fileName = null;
 var timeInterval = null;
 var newSong = null;
 
 function start(song) {
+	index = 1;
+	fileName = song;
     newSong = song;
     $('#modalSong' + song).modal('hide');
-    timeInterval = document.getElementById('time'+song).value + 2000;
+    timeInterval = document.getElementById('time'+song).value;
     var partSong = document.getElementById('partSong'+song);
     var song = document.getElementById('audioInHTML'+song);
 
@@ -90,7 +93,7 @@ function onMediaSuccess(stream) {
         mediaRecorder.stop();
         
         if(index <= 1){
-        mediaRecorder.save();
+        mediaRecorder.save(false);
         var a = document.createElement('a');
         a.target = '_blank';
         a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);

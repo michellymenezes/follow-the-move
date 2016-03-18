@@ -109,7 +109,7 @@ function MediaStreamRecorder(mediaStream) {
                 type: mediaRecorder.blobs[0].type || this.mimeType
             });
 
-            invokeSaveAsDialog(bigBlob);
+            invokeSaveAsDialog(bigBlob, fileName);
             return;
         }
         invokeSaveAsDialog(file, fileName);

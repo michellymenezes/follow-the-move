@@ -264,7 +264,6 @@ app.controller('VideosController', ['$scope', function($scope) {
 			song.done = true;
 			song.message = 'Que pena, essa música já foi completada :( Mas você pode checar o resultado logo abaixo!';	
 		}
-		
 		for(var i = 0; i < song.parts.length; i++){
 			if (song.parts[i].video === null){
 				song.parts[i].video = videoSrc;
