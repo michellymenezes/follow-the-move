@@ -71,7 +71,7 @@ function onMediaSuccess(stream) {
     var videoWidth = 800;
     var videoHeight = 400;
     video = mergeProps(video, {
-        controls: true,
+        controls: false,
         muted: true,
         width: videoWidth,
         height: videoHeight,

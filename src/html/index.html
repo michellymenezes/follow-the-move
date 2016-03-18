@@ -309,32 +309,11 @@
                         <div class="modal-body">
                             <h2>{{songs[0].name}}</h2>
                             <p class="item-intro text-muted">{{songs[0].message}}</p>
-                            <div>
-                                <video id="videoElement" width="640" height="360" controls>
-                                    <source src="example.webm" type="video/webm">
-                                </video>
-                                <script>
-                                    var i = 1;
-                                    var sources = ['example.webm', 'example2.webm'];
-                                    $('#videoElement').bind('ended', function() {
-                                        //'this' is the DOM video element
-                                        this.src = sources[i++ % sources.length];
-                                        this.load();
-                                        this.play();
-                                       
-                                    });
-                                </script>
-                                <form>
-                                    <br><br>
-                                    <p><button type="button" value="PlaySoundAndVideo" onClick="PlaySoundAndVideo('videoElement'),PlaySoundAndVideo('audioInHTML0')" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
-                                    <script>
-                                        function PlaySoundAndVideo(soundObj,videoObj) {
-                                            var soundAndVideo=document.getElementById(soundObj,videoObj);
-                                            soundAndVideo.play();
-                                        }
-                                    </script>
-                                </form>
-
+                            <div ng-show="{{songs[0].nVideos > 0}}">
+	                            <video id="videoParts0" width="640" height="360" ng-src="{{songs[0].parts[0].video}}"></video>
+	                            <audio id="audioParts0" ng-src="{{songs[0].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(0, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
@@ -410,7 +389,11 @@
                         <div class="modal-body">
                             <h2>{{songs[1].name}}</h2>
                             <p class="item-intro text-muted">{{songs[1].message}}</p>
-                            <div>
+                            <div ng-show="{{songs[1].nVideos > 0}}">
+	                            <video id="videoParts1" width="640" height="360" ng-src="{{songs[1].parts[0].video}}"></video>
+	                            <audio id="audioParts1" ng-src="{{songs[1].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(1, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
@@ -486,7 +469,11 @@
                         <div class="modal-body">
                             <h2>{{songs[2].name}}</h2>
                             <p class="item-intro text-muted">{{songs[2].message}}</p>
-                            <div>
+                            <div ng-show="{{songs[2].nVideos > 0}}">
+	                            <video id="videoParts2" width="640" height="360" ng-src="{{songs[2].parts[0].video}}"></video>
+	                            <audio id="audioParts2" ng-src="{{songs[2].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(2, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
@@ -560,8 +547,8 @@
                             <h2>{{songs[3].name}}</h2>
                             <p class="item-intro text-muted">{{songs[3].message}}</p>
                             <div ng-show="{{songs[3].nVideos > 0}}">
-	                            <video id="videoParts3" width="640" height="360" src="{{songs[3].parts[0].video}}"></video>
-	                            <audio id="audioParts3" src="{{songs[3].music}}" style="display: none;" ></audio>
+	                            <video id="videoParts3" width="640" height="360" ng-src="{{songs[3].parts[0].video}}"></video>
+	                            <audio id="audioParts3" ng-src="{{songs[3].music}}" style="display: none;" ></audio>
 	                            <p><button type="button" onClick="playVideosAndSongs(3, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
 	                            
                             </div>
@@ -636,7 +623,11 @@
                         <div class="modal-body">
                             <h2>{{songs[4].name}}</h2>
                             <p class="item-intro text-muted">{{songs[4].message}}</p>
-                            <div>
+                            <div ng-show="{{songs[4].nVideos > 0}}">
+	                            <video id="videoParts4" width="640" height="360" ng-src="{{songs[4].parts[0].video}}"></video>
+	                            <audio id="audioParts4" ng-src="{{songs[4].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(4, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
@@ -709,7 +700,11 @@
                         <div class="modal-body">
                             <h2>{{songs[5].name}}</h2>
                             <p class="item-intro text-muted">{{songs[5].message}}</p>
-                            <div>
+                            <div ng-show="{{songs[5].nVideos > 0}}">
+	                            <video id="videoParts5" width="640" height="360" ng-src="{{songs[5].parts[0].video}}"></video>
+	                            <audio id="audioParts5" ng-src="{{songs[5].music}}" style="display: none;" ></audio>
+	                            <p><button type="button" onClick="playVideosAndSongs(5, 2, 0)" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i> Play video!</button></p>
+	                            
                             </div>
                             <br><br>
                             <div class="row">
