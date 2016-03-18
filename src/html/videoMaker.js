@@ -10,18 +10,27 @@ var fileName = null;
 var timeInterval = null;
 var newSong = null;
 
+var isFirstTime = true;
+var video  = null;
+
 function start(song) {
+
 	index = 1;
 	fileName = song;
+
     newSong = song;
     $('#modalSong' + song).modal('hide');
     timeInterval = document.getElementById('time'+song).value;
     var partSong = document.getElementById('partSong'+song);
-    var song = document.getElementById('audioInHTML'+song);
 
+    var song = document.getElementById('audioInHTML'+song);
     song.pause();
     song.currentTime = 0.0;
+
+    document.querySelector('#save-video'+newSong).disabled = true;
+
     this.disabled = false;
+
     console.log(timeInterval);
     
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
@@ -70,9 +79,13 @@ function onMediaSuccess(stream) {
 
     var videosContainer = document.getElementById('videos-container'+newSong);
 
-    var video = document.createElement('video');
-    var videoWidth = 800;
-    var videoHeight = 400;
+
+    if(videosContainer.childElementCount == 0) {
+        video = document.createElement('video');
+    }
+
+    var videoWidth = 700;
+    var videoHeight = 300;
     video = mergeProps(video, {
         controls: false,
         muted: true,
@@ -81,6 +94,8 @@ function onMediaSuccess(stream) {
         src: URL.createObjectURL(stream)
     });
     video.play();
+    console.log(videosContainer.childElementCount);
+
     videosContainer.appendChild(video);
     videosContainer.appendChild(document.createElement('hr'));
     mediaRecorder = new MediaStreamRecorder(stream);
@@ -91,6 +106,8 @@ function onMediaSuccess(stream) {
     
     mediaRecorder.ondataavailable = function(blob) {
         mediaRecorder.stop();
+
+        document.querySelector('#save-video'+newSong).disabled = false;
         
         if(index <= 1){
         mediaRecorder.save(false);
@@ -98,6 +115,7 @@ function onMediaSuccess(stream) {
         a.target = '_blank';
         a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);
         a.href = URL.createObjectURL(blob);
+
         videosContainer.appendChild(a);
         videosContainer.appendChild(document.createElement('hr'));
 
@@ -131,6 +149,6 @@ function getTimeLength(milliseconds) {
     return data.getUTCHours() + " hours, " + data.getUTCMinutes() + " minutes and " + (data.getUTCSeconds()-2) + " second(s)";
 }
 window.onbeforeunload = function() {
-    //document.querySelector('#start-recording').disabled = false;
+
     //document.querySelector('#maysa').disable = false;
 };

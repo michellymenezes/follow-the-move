@@ -1014,6 +1014,8 @@ function WhammyRecorderHelper(mediaStream, root) {
 
     var isOnStartedDrawingNonBlankFramesInvoked = false;
 
+
+
     function drawFrames() {
         if (isPaused) {
             lastTime = new Date().getTime();

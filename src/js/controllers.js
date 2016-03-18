@@ -289,9 +289,12 @@ app.controller('VideosController', ['$scope', function($scope) {
 	
 	$scope.closeModalSong = function (song) {
     	$('#modalSong' + song).modal('hide');
-		var song = document.getElementById('audioInHTML'+song);
-		song.pause();
-		song.currentTime = 0.0;
+		var fullSong = document.getElementById('audioInHTML'+song);
+		fullSong.pause();
+		fullSong.currentTime = 0.0;
+		var userSong = document.getElementById('partSong'+song);
+		userSong.pause();
+		userSong.currentTime = 0.0;
 	};
 
     $scope.closeModalVideo = function () {
