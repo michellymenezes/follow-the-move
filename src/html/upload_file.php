@@ -22,15 +22,15 @@ if ((($_FILES["file"]["type"] == "video/mp4")
 
     echo "Sucess";
       
-    if (file_exists("upload/" . $_POST["folder"] . "/" . $_FILES["file"]["name"]))
+    if (file_exists("../video/" . $_POST["folder"] . "/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
       }
     else
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "upload/" . $_POST["folder"] . "/" . $_FILES["file"]["name"]);
-      echo "Stored in: " . "upload/" . $_POST["folder"] . "/". $_FILES["file"]["name"];
+      "../video/" . $_POST["folder"] . "/" . $_FILES["file"]["name"]);
+      echo "Stored in: " . "../video/" . $_POST["folder"] . "/". $_FILES["file"]["name"];
       }
     }
   }

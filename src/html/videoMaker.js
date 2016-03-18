@@ -1,11 +1,12 @@
 function captureUserMedia(mediaConstraints, successCallback, errorCallback, partSong) {
 	setTimeout(function() { partSong.play(); }, 1000);
     navigator.mediaDevices.getUserMedia(mediaConstraints).then(successCallback).catch(errorCallback);
-}
+};
 var mediaConstraints = {
     audio: !IsChrome && !IsOpera && !IsEdge, // record both audio/video in Firefox
     video: true
 };
+var fileName = null;
 var timeInterval = null;
 var newSong = null;
 
@@ -13,7 +14,10 @@ var isFirstTime = true;
 var video  = null;
 
 function start(song) {
-    index = 1;
+
+	index = 1;
+	fileName = song;
+
     newSong = song;
     $('#modalSong' + song).modal('hide');
     timeInterval = document.getElementById('time'+song).value;
@@ -30,7 +34,29 @@ function start(song) {
     console.log(timeInterval);
     
     captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError, partSong);
-}
+};
+
+function playVideosAndSongs(song, n, j) {	
+	if(j < n){
+
+			video = document.getElementById('videoParts'+song);
+			console.log(video);
+			video.src = "../video/"+(song+1)+"/"+(j+1)+".webm";
+			music = document.getElementById('audioParts'+song);
+			console.log(music);
+			music.src = "../song/"+(song+1)+"/"+(j+1)+".mp3";
+			
+			video.load();
+			music.load();
+			
+			video.play();
+			music.play();
+			j++;
+			music.onended = function () {
+				playVideosAndSongs(song, n, j);
+			};
+	}
+};
 
 function stopMusic(elem) {
 
@@ -44,7 +70,7 @@ function stopMusic(elem) {
     //video.currentTime = 0;
 
     $('#videoModal'+elem).modal('hide');
-}
+};
 
 
 
@@ -61,7 +87,7 @@ function onMediaSuccess(stream) {
     var videoWidth = 700;
     var videoHeight = 300;
     video = mergeProps(video, {
-        controls: true,
+        controls: false,
         muted: true,
         width: videoWidth,
         height: videoHeight,
@@ -84,7 +110,7 @@ function onMediaSuccess(stream) {
         document.querySelector('#save-video'+newSong).disabled = false;
         
         if(index <= 1){
-        mediaRecorder.save();
+        mediaRecorder.save(false);
         var a = document.createElement('a');
         a.target = '_blank';
         a.innerHTML = 'Open Recorded Video No. ' + (index++) + ' (Size: ' + bytesToSize(blob.size) + ') Time Length: ' + getTimeLength(timeInterval);

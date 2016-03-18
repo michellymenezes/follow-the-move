@@ -1,6 +1,6 @@
 var app = angular.module('app', []);
 
-app.controller('TeamController', function ($scope) {
+app.controller('TeamController', ['$scope', function ($scope) {
 	$scope.teamCC = [{
 		name: 'Maysa Macedo',
 		course: 'Ciência da Computação',
@@ -44,30 +44,44 @@ app.controller('TeamController', function ($scope) {
 		facebook: 'https://www.facebook.com/zilmarc.paulino'
 	}];
 	
-});
+}]);
 
-app.controller('StepsController', function($scope) {
+app.controller('StepsController', ['$scope', function($scope) {
 	$scope.steps =[{
 		title: 'Escolha sua música',
 		description: "Let's go? Para começar, escolha uma música da nossa lista abaixo e veja se alguém já enviou uma coreografia e até onde está gravada.",
 		image: '../img/about/icon1.jpg',
 	},{
 		title: 'Contribua',
-		description: 'Dê continuidade! Deixe o seu toque na coreografia, grave uma parte dela agora!',
+		description: 'Dê continuidade! Deixe o seu toque na coreografia, gravando uma parte dela. Basta clicar no botão gravar para começar seus movimentos!',
 		image: '../img/about/icon2.jpg',
 	},{
 		title: 'Publique',
-		description: 'Pronto! Faça o upload para o site e veja milhares de pessoas se unirem a você em uma só dança!',
+		description: 'Pronto! Quando a música terminar, um arquivo com sua dança será baixado. Você só precisa clicar na música que dançou e selecionar o arquivo para envio. Veja pessoas diferentes se unirem a você em uma só dança!',
 		image: '../img/about/icon3.jpg',
+	}];
+	
+	$scope.tips =[{
+		title: '1. Escolha um ambiente bem iluminado',
+		image: '../img/about/tip1.jpg',
+	},{
+		title: '2. Opte por planos de fundo claros',
+		image: '../img/about/tip2.jpg',
+	},{
+		title: '3. Se distancie de sua webcam de modo que ela capture seu corpo por completo',
+		image: '../img/about/tip3.jpg',
+	},{
+		title: '4. Se vai dar continuidade a um vídeo que já existe, observe como foi o último passo e tente continuar de onde parou',
+		image: '../img/about/tip4.jpg',
 	}];
 	
 		
  	$scope.openTipsModal = function () {
  		$('#tipsModal').modal('show');
  	};
-});
+}]);
 
-app.controller('VideosController', function($scope) {
+app.controller('VideosController', ['$scope', function($scope) {
 	
 	$scope.n = null;
 	
@@ -148,18 +162,18 @@ app.controller('VideosController', function($scope) {
 		}]
 	},{
 		done: false,
-		nVideos: 0,
-		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		nVideos: 1,
+		message: 'Esses são os passos que temos para essa música até o momento. Contribua com seus movimentos também!',
 		name: 'Do It',
 		singer: 'Cherish',
 		music: '../song/4/doIt.mp3',
 		image: '../img/grid/imgSong4.jpg',
-		time: 52000,
-		nextPart: '../song/4/1.mp3',
+		time: 51000,
+		nextPart: '../song/4/2.mp3',
 		parts: [{
 			music:"../song/4/1.mp3",
 			time: 52000,
-			video: null
+			video: "../video/4/1.webm"
 		},{
 			music:"../song/4/2.mp3",
 			time: 51000,
@@ -237,6 +251,9 @@ app.controller('VideosController', function($scope) {
 	}];
 	
 	$scope.updateMusic = function(songN, videoSrc){
+		console.log($scope.songs[songN].message);
+		console.log($scope.songs[songN].nVideos);
+		console.log($scope.songs[songN].nextPart);
 		var song = $scope.songs[songN]; 
 		song.nVideos++;
 		
@@ -247,7 +264,6 @@ app.controller('VideosController', function($scope) {
 			song.done = true;
 			song.message = 'Que pena, essa música já foi completada :( Mas você pode checar o resultado logo abaixo!';	
 		}
-		
 		for(var i = 0; i < song.parts.length; i++){
 			if (song.parts[i].video === null){
 				song.parts[i].video = videoSrc;
@@ -256,9 +272,15 @@ app.controller('VideosController', function($scope) {
 					song.nextPart = song.parts[i+1].music;
 					song.time = song.parts[i+1].time;
 				}
+				console.log($scope.songs[songN].message);
+				console.log($scope.songs[songN].nVideos);
+				console.log($scope.songs[songN].nextPart);
+				console.log($scope.songs[songN]);
+
 				return;
 			}
-		}	
+		}
+		
 	};
 	
 	$scope.openModalSong = function (song) {
@@ -281,4 +303,4 @@ app.controller('VideosController', function($scope) {
         song.pause();
         song.currentTime = 0.0;
     };
-});
+}]);
