@@ -99,19 +99,19 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Lady Gaga',
 		music: '../song/1/pokerface.mp3',
 		image: '../img/grid/imgSong1.jpg',
-		time: 42000,
+		time: 44000,
 		nextPart: '../song/1/1.mp3',
 		parts: [{
 			music:"../song/1/1.mp3",
-			time: 42000,
+			time: 44000,
 			video: null
 		},{
 			music:"../song/1/2.mp3",
-			time: 42000,
+			time: 44000,
 			video: null
 		},{
 			music:"../song/1/3.mp3",
-			time: 46000,
+			time: 48000,
 			video: null
 		}]
 	},{
@@ -122,19 +122,19 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Kaoma',
 		music: '../song/2/chorandoSeFoi.mp3',
 		image: '../img/grid/imgSong2.jpg',
-		time: 34000,
+		time: 36000,
 		nextPart: '../song/2/1.mp3',
 		parts: [{
 			music:"../song/2/1.mp3",
-			time: 34000,
+			time: 36000,
 			video: null
 		},{
 			music:"../song/2/2.mp3",
-			time: 40000,
+			time: 42000,
 			video: null
 		},{
 			music:"../song/2/3.mp3",
-			time: 41000,
+			time: 43000,
 			video: null
 		}]
 	},{
@@ -145,19 +145,19 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'FKA Twigs',
 		music: '../song/3/figure8.mp3',
 		image: '../img/grid/imgSong3.jpg',
-		time: 40000,
+		time: 42000,
 		nextPart: '../song/3/1.mp3',
 		parts: [{
 			music:"../song/3/1.mp3",
-			time: 40000,
+			time: 42000,
 			video: null
 		},{
 			music:"../song/3/2.mp3",
-			time: 48000,
+			time: 50000,
 			video: null
 		},{
 			music:"../song/3/3.mp3",
-			time: 45000,
+			time: 47000,
 			video: null
 		}]
 	},{
@@ -168,19 +168,19 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Cherish',
 		music: '../song/4/doIt.mp3',
 		image: '../img/grid/imgSong4.jpg',
-		time: 51000,
+		time: 54000,
 		nextPart: '../song/4/2.mp3',
 		parts: [{
 			music:"../song/4/1.mp3",
-			time: 52000,
+			time: 54000,
 			video: "../video/4/1.webm"
 		},{
 			music:"../song/4/2.mp3",
-			time: 51000,
+			time: 53000,
 			video: null
 		},{
 			music:"../song/4/3.mp3",
-			time: 53000,
+			time: 55000,
 			video: null
 		}]
 	},{
@@ -191,15 +191,15 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Blondie',
 		music: '../song/5/oneWayOrAnother.mp3',
 		image: '../img/grid/imgSong5.jpg',
-		time: 46000,
+		time: 48000,
 		nextPart: '../song/5/1.mp3',
 		parts: [{
 			music:"../song/5/1.mp3",
-			time: 46000,
+			time: 48000,
 			video: null
 		},{
 			music:"../song/5/2.mp3",
-			time: 59000,
+			time: 61000,
 			video: null
 		}]
 	},{
@@ -210,15 +210,15 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Beto Barbosa',
 		music: '../song/6/preta.mp3',
 		image: '../img/grid/imgSong6.jpg',
-		time: 43000,
+		time: 45000,
 		nextPart: '../song/6/1.mp3',
 		parts: [{
 			music:"../song/6/1.mp3",
-			time: 43000,
+			time: 45000,
 			video: null
 		},{
 			music:"../song/6/2.mp3",
-			time: 59000,
+			time: 61000,
 			video: null
 		}]
 	},{
@@ -229,23 +229,23 @@ app.controller('VideosController', ['$scope', function($scope) {
 		singer: 'Die Antword',
 		music: '../song/7/evilBoy.mp3',
 		image: '../img/grid/imgSong7.jpg',
-		time: 28000,
+		time: 30000,
 		nextPart: '../song/7/1.mp3',
 		parts: [{
 			music:"../song/7/1.mp3",
-			time: 28000,
+			time: 30000,
 			video: null
 		},{
 			music:"../song/7/2.mp3",
-			time: 41000,
+			time: 43000,
 			video: null
 		},{
 			music:"../song/7/3.mp3",
-			time: 35000,
+			time: 37000,
 			video: null
 		},{
 			music:"../song/7/4.mp3",
-			time: 44000,
+			time: 46000,
 			video: null
 		}]
 	}];
