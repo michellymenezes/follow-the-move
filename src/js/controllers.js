@@ -185,14 +185,14 @@ app.controller('VideosController', ['$scope', function($scope) {
 		}]
 	},{
 		done: false,
-		nVideos: 0,
-		message: 'Essa música ainda não foi gravada. Seja o primeiro!',
+		nVideos: 1,
+		message: 'Esses são os passos que temos para essa música até o momento. Contribua com seus movimentos também!',
 		name: 'One Way Or Another',
 		singer: 'Blondie',
 		music: '../song/5/oneWayOrAnother.mp3',
 		image: '../img/grid/imgSong5.jpg',
-		time: 46000,
-		nextPart: '../song/5/1.mp3',
+		time: 59000,
+		nextPart: '../song/5/2.mp3',
 		parts: [{
 			music:"../song/5/1.mp3",
 			time: 46000,
